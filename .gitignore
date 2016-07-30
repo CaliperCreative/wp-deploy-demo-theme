@@ -1,0 +1,9 @@
+deployconfig.json
+build
+releases
+backups
+node_modules
+assets/scss/.sass-cache
+_Project Images/*.jpg
+_Project Images/*.png
+_Project Images/*.pdg

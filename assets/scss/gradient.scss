@@ -1,0 +1,35 @@
+// background: linear-gradient(230deg, #32e8f1, #b635bb);
+// background-size: 400% 400%;
+
+// -webkit-animation: AnimationName 14s ease infinite;
+// -moz-animation: AnimationName 14s ease infinite;
+// animation: AnimationName 14s ease infinite;
+
+// @-webkit-keyframes AnimationName {
+//     0%{background-position:0% 99%}
+//     50%{background-position:100% 2%}
+//     100%{background-position:0% 99%}
+// }
+// @-moz-keyframes AnimationName {
+//     0%{background-position:0% 99%}
+//     50%{background-position:100% 2%}
+//     100%{background-position:0% 99%}
+// }
+// @keyframes AnimationName { 
+//     0%{background-position:0% 99%}
+//     50%{background-position:100% 2%}
+//     100%{background-position:0% 99%}
+// }
+@mixin gradient-animated($direction, $duration, $colors){
+  $size: length($colors) * 200%;  
+  background: linear-gradient($direction, $colors);
+  background-size: $size $size;
+
+  @keyframes gradient-animation-name {
+    0%{background-position: 0% 0%}
+    50%{background-position: 100% 100%}
+    100%{background-position:0% 0%}
+  };
+  
+  animation: gradient-animation-name $duration linear infinite;
+}

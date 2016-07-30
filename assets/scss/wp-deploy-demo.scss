@@ -1,0 +1,24 @@
+@import 'colors';
+@import 'gradient';
+
+body {
+  background-color:$blue;
+}
+
+.site-header-main {
+  padding-left:20px;
+  padding-right:20px;
+  @include gradient-animated(230deg, 6s, ($blue, $magenta));
+}
+.site-branding {
+  $font-color: white;
+  .site-description {
+    color: $font-color;
+  }
+  .site-title a {
+    color: $font-color;
+    &:hover {
+      color:black;
+    }
+  }
+}
