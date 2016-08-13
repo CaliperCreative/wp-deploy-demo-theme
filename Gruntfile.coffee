@@ -11,11 +11,11 @@ module.exports = (grunt) ->
 
   # Register tasks
   grunt.registerTask "default" , ["watch"]
-
-  # If using grunt to concat and minify assets, or anything else
-  # define those tasks here and add them to the "build" task
   
-  # grunt.registerTask "minify:dist", ["uglify:dist""cssmin:dist"]
+  # Dependency Management
+  target = if typeof grunt.option('target') isnt 'undefined' then ':' + grunt.option('target') else '';
+  grunt.registerTask "install_plugins" , ["exec:install_plugins#{target}"]
+  grunt.registerTask "uninstall_plugins" , ["exec:uninstall_plugins#{target}"]
   
   grunt.registerTask "build"   , ["clean:build", "copy:build", "compress:build"]
   grunt.registerTask "deploy"  , ["build", "push_theme"]
